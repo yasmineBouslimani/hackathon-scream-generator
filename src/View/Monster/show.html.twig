@@ -1,17 +1,119 @@
 {% extends 'layout.html.twig' %}
 
 {% block banner %}
-    <div class="masthead">
+    {% include 'banner.html.twig' %}
 
-        <h1>Jumpscare Generatooooor</h1>
+{% endblock %}
 
+{% block form %}
+    <div class="container-fluid">
+        <h1  style="  color: #fff;
+                  text-shadow:
+                    0 0 1px #fff,
+                    0 0 2px #fff,
+                    0 0 4px #fff,
+                    0 0 8px #ffe101,
+                    0 0 16px #ffe101,
+                    0 0 32px #ffd204,
+                    0 0 64px #ffdf04,
+                    0 0 128px #ffe905;"
+             class="d-flex justify-content-center m-5">Envoie-nous ta photo en déguisement d'Halloween !!!</h1>
+        <div class="column">
+            <div>
+                <div class="column">
+                    <div class="d-flex justify-content-center m-5">
+                        <h4 style="   font-size: 25px;
+                                  color: #fff;
+                                  text-shadow:
+                                    0 0 1px #fff,
+                                    0 0 2px #fff,
+                                    0 0 4px #fff,
+                                    0 0 8px #fff,
+                                    0 0 16px #fff,
+                                    0 0 32px #fff,
+                                    0 0 64px #fff,
+                                    0 0 128px #fff;" >Choisis ta meilleure photo déguisé(e) pour Halloween et partage-la !</h4><br>
+
+                    </div>
+                    <div class="d-flex justify-content-center m-5">
+                        <h4 style="       font-size: 25px;
+                                  color: #fff;
+                                  text-shadow:
+                                    0 0 1px #fff,
+                                    0 0 2px #fff,
+                                    0 0 4px #fff,
+                                    0 0 8px #fff,
+                                    0 0 16px #fff,
+                                    0 0 32px #fff,
+                                    0 0 64px #fff,
+                                    0 0 128px #fff;" >Nous voulons avoir <i>PEEEEEUR</i> !!!</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="d-flex justify-content-center m-5">
+                    <form action="upload.php" method="post" enctype="multipart/form-data" style="
+                                  font-size: 25px;
+                                  color: #fff;
+                                  text-shadow:
+                                    0 0 1px #fff,
+                                    0 0 2px #fff,
+                                    0 0 4px #fff,
+                                    0 0 8px #fff,
+                                    0 0 16px #fff,
+                                    0 0 32px #fff,
+                                    0 0 64px #fff,
+                                    0 0 128px #fff;" >
+                        Choisis ta photo ici :
+                        <input type="file" name="fileToUpload" id="fileToUpload">
+                        <br><br>Clique ensuite sur Upload Image :
+                        <input type="submit" value="Upload Image" name="submit" class="btn btn-outline-light">
+                    </form>
+                </div>
+                <div class="d-flex justify-content-center m-5">
+                    <form class="h-100 d-inline-block" action="_form.html.twig" method="post" style="
+                                  font-size: 25px;
+                                  color: #fff;
+                                  text-shadow:
+                                    0 0 1px #fff,
+                                    0 0 2px #fff,
+                                    0 0 4px #fff,
+                                    0 0 8px #fff,
+                                    0 0 16px #fff,
+                                    0 0 32px #fff,
+                                    0 0 64px #fff,
+                                    0 0 128px #fff;" >
+                        <label for="msg">Donne un titre à ta photo :</label>
+                        <textarea id="msg" name="description"
+                                  placeholder="Description..."></textarea>
+                    </form>
+                </div>
+                <div class="d-flex justify-content-center m-5">
+                    <h4 style="       font-size: 25px;
+                                  color: #fff;
+                                  text-shadow:
+                                    0 0 1px #fff,
+                                    0 0 2px #fff,
+                                    0 0 4px #fff,
+                                    0 0 8px #fff,
+                                    0 0 16px #fff,
+                                    0 0 32px #fff,
+                                    0 0 64px #fff,
+                                    0 0 128px #fff;" ><i>La suite ci-dessous....</i></h4>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 
+
+
+
 {% block content %}
 
-    <section id="gallery" class="gallery">
+    <section class="gallery">
         <div class="container">
             <div class="row">
                 <div class="col-md-12 ml-md-auto text-center">
@@ -106,7 +208,7 @@
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1">
                             <label class="form-check-label" for="exampleRadios1">
-                                <h2>Blooddy Ricker</h2>
+                                <h2>Vania Santosha</h2>
                             </label>
                         </div>
                             {% for monster in monsters %}
@@ -143,7 +245,6 @@
                                 <h2>Tukang sihir</h2>
                             </label>
                         </div>
-
                         
                             {% for monster in monsters %}
                                 {% if (monster.id == 20)%}
@@ -154,10 +255,6 @@
                 </div>
             </div>
         </div>
+        </div>
     </section>
-
-    
-
-
-
 {% endblock %}
